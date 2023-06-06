@@ -1,21 +1,23 @@
-import React, { useState } from 'react';
-import Select from 'react-select';
-import './AddProduct.css';
-import Invoice from './Invoice';
+import React, { useState } from "react";
+import Select from "react-select";
+import "./AddProduct.css";
+import Invoice from "./Invoice";
 
 function AddProduct() {
   const [newProduct, setNewProduct] = useState({
-    name: '',
-    qty: '',
-    price: '',
-    total: '',
-    discount: 0,
-    net: '',
-    description: ''
+    name: "",
+    qty: "",
+    price: "",
+    total: "",
+    discount: "",
+    net: "",
+    description: "",
   });
 
   const [serialNumber, setSerialNumber] = useState(1);
   const [products, setProducts] = useState([]);
+  const [customerName, setCustomerName] = useState("");
+  const [customerPhone, setCustomerPhone] = useState("");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -23,23 +25,26 @@ function AddProduct() {
     setNewProduct((prevProduct) => {
       let updatedProduct = {
         ...prevProduct,
-        [name]: value
+        [name]: value,
       };
 
-      if (name === 'qty' || name === 'price') {
-        const newTotal = parseInt(updatedProduct.qty) * parseInt(updatedProduct.price);
+      if (name === "qty" || name === "price") {
+        const newTotal =
+          parseInt(updatedProduct.qty) * parseInt(updatedProduct.price);
         updatedProduct = {
           ...updatedProduct,
-          total: newTotal
+          total: newTotal,
         };
       }
 
-      if (name === 'discount') {
-        const newNet = parseInt(updatedProduct.total) - (parseInt(updatedProduct.total) * (parseInt(value) / 100));
+      if (name === "discount") {
+        const newNet =
+          parseInt(updatedProduct.total) -
+          parseInt(updatedProduct.total) * (parseInt(value) / 100);
         updatedProduct = {
           ...updatedProduct,
           discount: value,
-          net: newNet
+          net: newNet,
         };
       }
 
@@ -54,13 +59,13 @@ function AddProduct() {
     setProducts((prevProducts) => [...prevProducts, newProduct]);
 
     setNewProduct({
-      name: '',
-      qty: '',
-      price: '',
-      total: '',
-      discount: 0,
-      net: '',
-      description: ''
+      name: "",
+      qty: "",
+      price: "",
+      total: "",
+      discount: "",
+      net: "",
+      description: "",
     });
   };
 
@@ -74,12 +79,12 @@ function AddProduct() {
 
   const { name, qty, price, description, total, discount, net } = newProduct;
   const productSuggestions = [
-    { label: 'Medium Pipe', value: 'Medium Pipe' },
-    { label: 'Large Pipe', value: 'Large Pipe' },
-    { label: 'Small Pipe', value: 'Small Pipe' },
-    { label: 'Steel Rod', value: 'Steel Rod' },
-    { label: 'Iron Sheet', value: 'Iron Sheet' },
-    { label: 'LED Bulb', value: 'LED Bulb' },
+    { label: "Medium Pipe", value: "Medium Pipe" },
+    { label: "Large Pipe", value: "Large Pipe" },
+    { label: "Small Pipe", value: "Small Pipe" },
+    { label: "Steel Rod", value: "Steel Rod" },
+    { label: "Iron Sheet", value: "Iron Sheet" },
+    { label: "LED Bulb", value: "LED Bulb" },
     // Add more product suggestions here
   ];
 
@@ -99,25 +104,69 @@ function AddProduct() {
         </div>
       </div>
       <div className="form-container">
-        <form className="mb-4" onSubmit={handleSubmit}>
+        <form className="mb-4" onSubmit={handleSubmit} autoComplete="off">
+          <div className="customer-info">
+            <h2>Customer Info</h2>
+            <div className="form-row">
+              <div className="form-group col-md-6">
+                <label>Customer Name</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  name="customerName"
+                  placeholder="Customer Name"
+                  value={customerName}
+                  onChange={(event) => {
+                    setCustomerName(event.target.value);
+                  }}
+                />
+              </div>
+              <div className="form-group col-md-6">
+                <label>Customer Phone</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  name="customerPhone"
+                  placeholder="Customer Phone"
+                  value={customerPhone}
+                  onChange={(event) => {
+                    setCustomerPhone(event.target.value);
+                  }}
+                />
+              </div>
+            </div>
+          </div>
+          <h2>New Product Info</h2>
           <div className="form-row">
             <div className="form-group col-md-2">
               <label>Serial Number</label>
-              <input type="text" className="form-control" value={serialNumber} readOnly />
+              <input
+                type="text"
+                className="form-control"
+                value={serialNumber}
+                readOnly
+              />
             </div>
             <div className="form-group col-md-7">
               <label>Product Name</label>
               <Select
+                required="true"
                 options={productSuggestions}
-                value={productSuggestions.find((option) => option.value === name)}
-                onChange={(selectedOption) => handleChange({ target: { name: 'name', value: selectedOption.value } })}
+                value={productSuggestions.find(
+                  (option) => option.value === name
+                )}
+                onChange={(selectedOption) =>
+                  handleChange({
+                    target: { name: "name", value: selectedOption.value },
+                  })
+                }
                 placeholder="Product Name"
               />
-
             </div>
             <div className="form-group col-md-4">
               <label htmlFor="amount">Quantity</label>
               <input
+                required="true"
                 type="number"
                 className="form-control"
                 name="qty"
@@ -129,6 +178,7 @@ function AddProduct() {
             <div className="form-group col-md-3">
               <label>Price</label>
               <input
+                required="true"
                 type="number"
                 className="form-control"
                 name="price"
@@ -139,11 +189,17 @@ function AddProduct() {
             </div>
             <div className="form-group col-md-3">
               <label>Total</label>
-              <input type="number" className="form-control" value={total} readOnly />
+              <input
+                type="number"
+                className="form-control"
+                value={total}
+                readOnly
+              />
             </div>
             <div className="form-group col-md-2">
               <label>Discount</label>
               <input
+                required="true"
                 type="number"
                 className="form-control"
                 name="discount"
@@ -154,7 +210,12 @@ function AddProduct() {
             </div>
             <div className="form-group col-md-3">
               <label>Net</label>
-              <input type="number" className="form-control" value={net} readOnly />
+              <input
+                type="number"
+                className="form-control"
+                value={net}
+                readOnly
+              />
             </div>
             <div className="form-group col-md-5">
               <label>Description</label>
@@ -167,19 +228,25 @@ function AddProduct() {
                 onChange={handleChange}
               />
             </div>
-            <input type="submit" className="btn btn-primary mr-2" value="Add Product" />
+            <input
+              type="submit"
+              className="btn btn-primary mr-2"
+              value="Add Product"
+            />
           </div>
         </form>
       </div>
-      
+
       <div className="product-list-container">
-        <Invoice products={products} deleteProduct={deleteProduct} />
+        <Invoice
+          products={products}
+          deleteProduct={deleteProduct}
+          customerName={customerName}
+          customerPhone= {customerPhone}
+        />
       </div>
     </>
   );
 }
 
 export default AddProduct;
-
-
-

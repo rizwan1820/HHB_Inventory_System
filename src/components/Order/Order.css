@@ -1,0 +1,51 @@
+.details {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.orderDetails,
+.customerDetails {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.orderDetails span,
+.customerDetails span {
+    margin: 10px;
+}
+
+.bottom{
+    display: block;
+}
+
+.bottom .net-total {
+    border-style: solid;
+    margin-top: 20px;
+    margin-left: 71%;
+    font-size: 20px;
+    border-radius: 10%;
+    /* Use 50% border-radius for a round shape */
+    width: 300px;
+    /* Adjust the width to fit the content */
+    height: 50px;
+    /* Adjust the height to fit the content */
+    background-color: #eeeeee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1px;
+}
+
+.bottom .bottom-btns button{
+    margin: 10px auto;
+}
+
+@media print {
+    .print-hide {
+      display: none;
+    }
+  }
+  

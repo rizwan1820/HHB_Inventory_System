@@ -1,72 +1,94 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-  
-    
-  }
-   
-  .form-row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin-bottom: 10px;
-  }
-  
-  .form-group {
-    flex: 0 0 48%;
-    margin-bottom: 10px;
-    margin-left: 10px;
-    margin-right: 10px;
-  }
-  
-  label {
-    font-weight: bold;
-    margin-bottom: 5px;
-  }
-  
-  input,
-  select {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  input[type="submit"] {
-    background-color: #0e0ef2;
-    color: white;
-    cursor: pointer;
-    margin-top: 10px;
-   width: auto;
-   margin-left: 50px;
-    
-  }
-  
-  input[type="submit"]:hover {
-    background-color: #5c655c;
-  }
-  .sales-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 20vh;
-    margin-bottom: 50px;
-  }
-  
-  .main-heading {
-    background-color: rgb(6, 14, 31);
-    padding: 10px;
-    color: white;
-  }
-  
-  .secondary-heading{
-    margin-top: 15px;
-    text-align: center;
-  }
-  .third-heading {
-    text-align: center;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.form-container{
+  width: 90%;
+  margin: auto;
+}
+
+.form-group {
+  flex: 0 0 48%;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input{
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+input[type="submit"] {
+  background-color: #0e0ef2;
+  color: white;
+  cursor: pointer;
+  width: 150px;
+  margin: 30px auto;
+}
+
+input[type="submit"]:hover {
+  background-color: #187bcd;
+}
+
+.sales-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 20vh;
+  margin-bottom: 40px;
+}
+
+.main-heading {
+  background-color: rgb(6, 14, 31);
+  padding: 10px;
+  color: white;
+}
+
+.secondary-heading {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.third-heading {
+  text-align: center;
+}
+
+.form-container h2{
+  text-align: center;
+  margin: 30px auto;
+}
+
+.customer-info{
+  margin: auto;
+}
+
+.customer-info h2{
+  text-align: center;
+  margin: 30px auto;
+}

@@ -1,0 +1,45 @@
+.input-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.input-section label {
+    margin: 10px 50px;
+}
+
+.input-section input {
+    width: 200px;
+    margin: 10px 50px;
+}
+
+.search-btn {
+    text-align: center;
+    margin: auto;
+}
+
+.search-btn button {
+    background-color: green;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 4px;
+    margin: 5px auto;
+}
+
+/* Style the buttons on hover */
+.search-btn button:hover {
+    background-color: rgb(5, 211, 5);
+}
+
+.hidden {
+    display: none;
+}

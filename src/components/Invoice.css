@@ -27,43 +27,6 @@
   background-color: #f9f9f9;
 }
 
-/* Adjust column widths */
-.table-container th:nth-child(2), /* Product Name */
-.table-container td:nth-child(2) {
-  width: 24%;
-}
-
-.table-container th:nth-child(5), /* Total */
-.table-container td:nth-child(5),
-.table-container th:nth-child(8), /* Description */
-.table-container td:nth-child(8)
-{
-  width: 13%;
-}
-
-.table-container th:first-child, /* Serial Number */
-.table-container td:first-child,
-.table-container th:nth-child(6), /* Discount */
-.table-container td:nth-child(6),
-.table-container th:nth-child(3), /* Quantity */
-.table-container td:nth-child(3) {
-  width: 6%;
-}
-
-.net-total {
-  border-style: solid;
-  margin-top: 20px;
-  margin-left: 71%;
-  font-size: 20px;
-  border-radius: 10% ; /* Use 50% border-radius for a round shape */
-  width: 300px; /* Adjust the width to fit the content */
-  height: 50px; /* Adjust the height to fit the content */
-  background-color: #eeeeee;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 1px;
-}
 .delete-button{
   background-color: #ccc;
   color: #0b0b0b;
@@ -74,4 +37,60 @@ font-weight: bold;
 }
 .delete-button:hover {
   background-color: #999;
+}
+
+.bottom{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.bottom .net-total {
+  border-style: solid;
+  margin-top: 20px;
+  /* margin-left: 71%; */
+  font-size: 20px;
+  border-radius: 10% ; /* Use 50% border-radius for a round shape */
+  width: 300px; /* Adjust the width to fit the content */
+  height: 50px; /* Adjust the height to fit the content */
+  background-color: #eeeeee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1px;
+}
+
+.table-container .save-btn{
+  background-color: green;
+  color: white;
+  width: 150px;
+  padding: 10px 30px;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 4px;
+  margin: 5px auto;
+  margin-bottom: 50px;
+}
+
+/* Style the buttons on hover */
+.table-container .save-btn:hover {
+  background-color: rgb(5, 211, 5);
+}
+
+/* Style the button text */
+.table-container .save-btn a {
+  text-decoration: none;
+  color: white;
+}
+
+.hidden{
+  display: none;
 }
