@@ -3,19 +3,21 @@ import "./Home.css";
 import { NavLink } from "react-router-dom";
 
 const Home = () => {
+  
   return (
     <>
+    
       <div className="Home-Page">
         <div className="sales-container">
           <div className="header">
             <h1 className="main-heading">
-              Haji Hanif Electric Sanitary & Fancy Light Store
+              PureLastic - A Project of HHB TRADERS
             </h1>
             <h2 className="secondary-heading">
-              28-B Commercial Sector C Bahria Town Lahore, Pakistan
+              
             </h2>
             <h3 className="third-heading">
-              Mobile No. Abid Jutt 0343-4573908 M. Rasheed 0301-4128554
+              Mobile No.  Qadeer Jutt 0343-4573908 M. Habib 0301-4128554
             </h3>
           </div>
         </div>
@@ -34,6 +36,9 @@ const Home = () => {
           </button>
           <button className="search">
             <NavLink to="/getlast">Last Order</NavLink>
+          </button>
+          <button className="search">
+            <NavLink to="/items">Entry Items</NavLink>
           </button>
         </div>
       </div>

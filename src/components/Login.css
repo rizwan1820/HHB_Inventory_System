@@ -1,0 +1,54 @@
+/* login.css */
+/* style.css */
+
+/* Reset default margin and padding for the entire document */
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Set the background color and text color for the header */
+  .header-login {
+    background-color: #050505;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  /* Apply styles to the main heading */
+  .main-heading-login {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  /* Apply styles to the secondary heading */
+  .secondary-heading-login {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  /* Apply styles to the third heading */
+  .third-heading-login {
+    font-size: 18px;
+    margin-top: 10px;
+  }
+  .login-button {
+    margin-top: 20px;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Hover effect for the button */
+  .login-button:hover {
+    background-color: #0056b3;
+  }
+  
